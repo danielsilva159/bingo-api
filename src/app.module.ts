@@ -3,10 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PostgresConfigService } from './config/postgres.config.service';
-import { UsersModule } from './users/users.module';
+import { UsersModule } from './modules/users/users.module';
 import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from './config/http-exception.filter';
-import { RoomModule } from './room/room.module';
+import { RoomModule } from './modules/room/room.module';
+import { CardModule } from './modules/card/card.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { RoomModule } from './room/room.module';
     }),
     UsersModule,
     RoomModule,
+    CardModule,
   ],
   controllers: [AppController],
   providers: [
