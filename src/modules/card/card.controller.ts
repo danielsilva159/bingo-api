@@ -29,6 +29,10 @@ export class CardController {
   findOne(@Param('id') id: string) {
     return this.cardService.findOne(id);
   }
+  @Get('/user/:id')
+  findByUserId(@Param('id') id: string) {
+    return this.cardService.findByUser(id);
+  }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateCardDto: UpdateCardDto) {

@@ -20,14 +20,14 @@ export class CreateRoomDto {
 
   @IsNumber()
   @Min(1)
-  maxPlayer: number;
+  maxPlayers: number;
 
   @IsNumber()
   @Min(1)
   maxCardsPerPlayer: number;
 
   @IsDateString()
-  dateStart: string;
+  dateStart: Date;
 
   @IsNumber()
   @Min(1)

@@ -8,6 +8,7 @@ import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from './config/http-exception.filter';
 import { RoomModule } from './modules/room/room.module';
 import { CardModule } from './modules/card/card.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { CardModule } from './modules/card/card.module';
     UsersModule,
     RoomModule,
     CardModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [

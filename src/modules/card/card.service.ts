@@ -62,13 +62,14 @@ export class CardService {
   }
 
   private generateCard(): number[][] {
-    return [
+    const card = [
       this.randomNumbers(1, 15),
       this.randomNumbers(16, 30),
       this.randomNumbers(31, 45, true),
       this.randomNumbers(46, 60),
       this.randomNumbers(61, 75),
     ];
+    return card;
   }
 
   private randomNumbers(
@@ -93,5 +94,15 @@ export class CardService {
     }
 
     return numbers;
+  }
+
+  async findByUser(userId: string) {
+    const cards = await this.repository.find({
+      where: {
+        userId,
+      },
+    });
+
+    return cards;
   }
 }

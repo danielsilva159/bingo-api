@@ -3,6 +3,7 @@ import { User } from 'src/modules/users/entities/user.entity';
 import {
   Column,
   CreateDateColumn,
+  Entity,
   JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
@@ -16,7 +17,7 @@ export enum BingoCardStatus {
   LOST = 'LOST',
   CANCELLED = 'CANCELLED',
 }
-
+@Entity()
 export class Card {
   @PrimaryGeneratedColumn('uuid')
   id: string;
